@@ -1,5 +1,5 @@
 ﻿@{
-    ViewBag.Title = "Nivel Educativo";
+    ViewBag.Title = "Redes Sociales";
 }
 
 <input type="hidden" id="GetDataIndex" name="GetDataIndex" value="@ViewBag.GetDataIndex" />
@@ -11,13 +11,13 @@
     <div>
         <form v-on:submit="addElement">
             <button class="btn btn-primary btn-ladda ladda-button" data-style="zoom-in">
-                <span class="ladda-label"><i class="fa fa-plus-square-o"></i> Agregar Nivel Educativo</span>
+                <span class="ladda-label"><i class="fa fa-plus-square-o"></i> Agregar Red Social</span>
                 <span class="ladda-spinner"></span>
             </button>
             <br />
         </form>
         <div class="card-header">
-            <i class="fa fa-align-justify"></i> Cadenas
+            <i class="fa fa-align-justify"></i> Redes Sociales
             <br />
             <div class="col-lg-4">
                 <input type="text" v-model="search" placeholder="Buscar..." class="form-control" />
@@ -25,7 +25,7 @@
         </div>
         <div>
             <grid :rows="filteredList"
-                  :columna="['EducationLevelId','Description']"
+                  :columna="['SocialId','Description']"
                   :filter-key="search">
             </grid>
         </div>

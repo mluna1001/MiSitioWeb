@@ -3,6 +3,7 @@
     using Newtonsoft.Json;
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class EducationLevel
     {
@@ -14,6 +15,9 @@
         [Required(ErrorMessage = "The field {0} is requiered.")]
         [MaxLength(30, ErrorMessage = "The field {0} only can contains a maximum of {1} characters lenght.")]
         public string Description { get; set; }
+
+        [NotMapped]
+        public int KeyId { get { return EducationLevelId; } }
         #endregion
 
         #region Used References

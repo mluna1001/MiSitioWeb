@@ -52,7 +52,9 @@
   <ItemGroup>
     <Compile Include="DataContext.cs" />
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\Data\DTEducationLevel.cs" />
+    <Compile Include="Models\Crud\DTEducationLevel.cs" />
+    <Compile Include="Models\Crud\DTErrorLog.cs" />
+    <Compile Include="Models\Crud\DTSocialNetwork.cs" />
     <Compile Include="Models\Tables\Education.cs" />
     <Compile Include="Models\Tables\EducationLevel.cs" />
     <Compile Include="Models\Tables\ErrorLog.cs" />

@@ -26,6 +26,26 @@
             var locationCreate = LocationCreate.value;
             window.location.href = locationCreate;
         },
+        deleteElement: function (item) {
+            var getDelete = LocationDelete.value
+            axios.get(getDelete + item.KeyId)
+                .then(response => {
+                    if (response.data) {
+                        let index = this.vModel.indexOf(item);
+                        this.vModel.splice(index, 1);
+                        toastr.success("Archivo removido.", "Exito");
+                        $('#deleteModal').modal('hide');
+
+                    }
+                    else if (!response.data.res) {
+                        $('#deleteModal').modal('hide');
+                        toastr.error(response.data.msj, "Error");
+                    }
+                })
+                .catch(function (error) {
+                    console.log(error)
+                });
+        }
     },
     computed: {
         filteredList: function () {

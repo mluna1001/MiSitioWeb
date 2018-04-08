@@ -43,7 +43,7 @@
                                     <i class="fa fa-edit"></i>
                                     Editar
                                 </button>
-                                <button type="button" data-toggle="modal" data-target="#dangerModal" class="btn btn-outline-danger" v-on:click="confirmDelete(row)">
+                                <button type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-outline-danger" v-on:click="confirmDelete(row)">
                                     <i class="fa fa-trash-o"></i>
                                     Eliminar
                                 </button>
@@ -117,8 +117,8 @@
                     this.currentPage = page;
                 },
                 editElement: function (item) {
-                    var locationCreateId = LocationCreateId.value
-                    window.location.href = locationCreateId + item.IdKey;
+                    var locationEdit = LocationEdit.value
+                    window.location.href = locationEdit + item.KeyId;
                 },
                 editElementModule: function (item) {
                     var locationCreateIdModule = LocationCreateIdModule.value

@@ -1,12 +1,9 @@
-﻿using MiSitioWeb.Data.Models.Data;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Mvc;
-
-namespace MiSitioWeb.Controllers
+﻿namespace MiSitioWeb.Controllers
 {
+    using Data.Models.Crud;
+    using Data.Models.Tables;
+    using System.Web.Mvc;
+
     public class NivelesEducativosController : Controller
     {
         // GET: NivelesEducativos
@@ -14,23 +11,22 @@ namespace MiSitioWeb.Controllers
         {
             string GetDataIndex = "/NivelesEducativos/GetDataIndex";
             string LocationCreate = "/NivelesEducativos/Create";
+            string LocationEdit = "/NivelesEducativos/Edit?EducationLevelId=";
+            string LocationDelete = "/NivelesEducativos/Delete?EducationLevelId=";
 
             ViewBag.GetDataIndex = GetDataIndex;
             ViewBag.LocationCreate = LocationCreate;
+            ViewBag.LocationEdit = LocationEdit;
+            ViewBag.LocationDelete = LocationDelete;
+
             return View();
         }
 
         [HttpGet]
         public JsonResult GetDataIndex()
         {
-            var eLevels = DTEducationLevel.GetEducationLevels();
+            var eLevels = DTEducationLevel.GetList();
             return Json(eLevels, JsonRequestBehavior.AllowGet);
-        }
-
-        // GET: NivelesEducativos/Details/5
-        public ActionResult Details(int id)
-        {
-            return View();
         }
 
         // GET: NivelesEducativos/Create
@@ -41,62 +37,37 @@ namespace MiSitioWeb.Controllers
 
         // POST: NivelesEducativos/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public JsonResult Create(EducationLevel model)
         {
-            try
-            {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return Json(DTEducationLevel.Create(model));
         }
 
         // GET: NivelesEducativos/Edit/5
-        public ActionResult Edit(int id)
+        public ActionResult Edit(int EducationLevelId)
         {
+            ViewBag.EducationLevelId = EducationLevelId;
             return View();
+        }
+
+        [HttpGet]
+        public JsonResult GetEditEducationLevel(int EducationLevelId)
+        {
+            EducationLevel educationLevel = DTEducationLevel.Find(EducationLevelId);
+            return Json(educationLevel, JsonRequestBehavior.AllowGet);
         }
 
         // POST: NivelesEducativos/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(EducationLevel model)
         {
-            try
-            {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
-        }
-
-        // GET: NivelesEducativos/Delete/5
-        public ActionResult Delete(int id)
-        {
-            return View();
+            return Json(DTEducationLevel.Create(model));
         }
 
         // POST: NivelesEducativos/Delete/5
-        [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        [HttpGet]
+        public JsonResult Delete(int EducationLevelId)
         {
-            try
-            {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return Json(DTEducationLevel.Delete(EducationLevelId), JsonRequestBehavior.AllowGet);
         }
     }
 }

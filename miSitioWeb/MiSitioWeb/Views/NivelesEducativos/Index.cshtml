@@ -1,0 +1,27 @@
+﻿@{
+    ViewBag.Title = "Nivel Educativo";
+}
+
+<input type="hidden" id="GetDataIndex" name="GetDataIndex" value="@ViewBag.GetDataIndex" />
+<input type="hidden" id="LocationCreate" name="LocationCreate" value="@ViewBag.LocationCreate" />
+
+<div id="MainDiv">
+    <div class="card-header">
+        <i class="fa fa-align-justify"></i> Cadenas
+        <br />
+        <div class="col-lg-4">
+            <input type="text" v-model="search" placeholder="Buscar..." class="form-control" />
+        </div>
+    </div>
+    <div>
+        <grid 
+              :rows="filteredList"
+              :columna="['EducationLevelId','Description']"
+              :filter-key="search">
+        </grid>
+    </div>
+</div>
+
+<script src="~/Scripts/axios.min.js"></script>
+<script src="~/Scripts/Models/GetModels.js"></script>
+<script src="~/Scripts/Vrid.js"></script>

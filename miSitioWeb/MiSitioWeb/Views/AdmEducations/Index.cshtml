@@ -1,0 +1,59 @@
+﻿@{
+    ViewBag.Title = "Educación";
+}
+
+<input type="hidden" id="GetDataIndex" name="GetDataIndex" value="@ViewBag.GetDataIndex" />
+<input type="hidden" id="LocationCreate" name="LocationCreate" value="@ViewBag.LocationCreate" />
+<input type="hidden" id="LocationEdit" name="LocationEdit" value="@ViewBag.LocationEdit" />
+<input type="hidden" id="LocationDelete" name="LocationDelete" value="@ViewBag.LocationDelete" />
+<input type="hidden" id="SelectLocation" name="SelectLocation" value="@ViewBag.SelectLocation" />
+
+<div id="MainDiv">
+    <div>
+        <form v-on:submit="addElement">
+            <button class="btn btn-primary btn-ladda ladda-button" data-style="zoom-in">
+                <span class="ladda-label"><i class="fa fa-plus-square-o"></i> Agregar Educación</span>
+                <span class="ladda-spinner"></span>
+            </button>
+            <br />
+        </form>
+        <div class="card-header">
+            <i class="fa fa-align-justify"></i> Cadenas
+            <br />
+            <div class="col-lg-4">
+                <input type="text" v-model="search" placeholder="Buscar..." class="form-control" />
+            </div>
+        </div>
+        <div>
+            <grid :rows="filteredList"
+                  :columna="['EducationId','EducationLevel','School','SStartDate','SEndDate']"
+                  :filter-key="search">
+            </grid>
+        </div>
+    </div>
+
+    <div class="modal" id="deleteModal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">Eliminar registro</h4>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Se eliminara el registro seleccionado&hellip;</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
+                    <button v-on:click="deleteElement(itemToDelete)" type="button" class="btn btn-primary">Aceptar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/axios.min.js"></script>
+<script src="~/Scripts/Models/GetModels.js"></script>
+<script src="~/Scripts/Vrid.js"></script>

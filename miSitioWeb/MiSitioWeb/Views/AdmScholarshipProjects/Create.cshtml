@@ -1,0 +1,41 @@
+﻿@{
+    ViewBag.Title = "Create Scholarship Project";
+}
+
+<div id="MainDiv">
+    @*<h4 class="jumbotron">
+            Nivel Educativo
+        </h4>*@
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="icon-note"></i> Crear - Proyecto Escolar
+                    <div class="card-actions">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6">
+                        <form id="formEL" v-on:submit="createScholarshipProject">
+                            <input type="hidden" id="EducationId" name="EducationId" value="@ViewBag.EducationId" />
+                            <div class="form-group">
+                                <label for="Description">Proyecto:</label>
+                                <input v-model="vModel.Project" required oninvalid="this.setCustomValidity('Escribe el nombre del proyecto')" oninput="setCustomValidity('')" type="text" class="form-control" id="Project" aria-describedby="emailHelp" placeholder="Ingrese el nombre del proyecto" />
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Descripción:</label>
+                                <textarea v-model="vModel.Description" required oninvalid="this.setCustomValidity('Escribe la descripción')" oninput="setCustomValidity('')" type="text" class="form-control" id="Description" aria-describedby="emailHelp" placeholder="Ingrese una descripción del proyecto" style="height: 150px; resize: none;"></textarea>
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" name="Create" value="Sign up"><i class="fa fa-save"></i> Guardar</button>
+                                <a class="btn btn-danger" href="@Url.Action("Index", "AdmScholarshipProject")"><i class="fa fa-times"></i> Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/Models/ScholarshipProject/Create.js"></script>

@@ -2,6 +2,7 @@
 {
     using Newtonsoft.Json;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class ScholarshipProject
     {
@@ -19,6 +20,9 @@
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "The field {0} is requiered.")]
         public string Description { get; set; }
+
+        [NotMapped]
+        public int KeyId { get { return ProjectId; } }
         #endregion
 
         #region References

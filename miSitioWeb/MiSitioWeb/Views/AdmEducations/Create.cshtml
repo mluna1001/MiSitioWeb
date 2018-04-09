@@ -1,0 +1,66 @@
+﻿@{
+    ViewBag.Title = "Create Education";
+}
+
+<div id="MainDiv">
+    @*<h4 class="jumbotron">
+            Nivel Educativo
+        </h4>*@
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                <div class="card-header">
+                    <i class="icon-note"></i> Crear - Educación
+                    <div class="card-actions">
+                    </div>
+                </div>
+                <div class="card-body">
+                    <div class="col-md-6">
+                        <form id="formEducation" v-on:submit="createEducation">
+                            <div class="form-group">
+                                <label for="EducationLevel">Nivel Educativo:</label>
+                                <select v-model="vModel.EducationLevelId" required oninvalid="this.setCustomValidity('Seleccione un nivel educativo del listado')" oninput="setCustomValidity('')" name="EducationLevelId" id="EducationLevelId" class="form-control select2-single">
+                                    <option selected value="" disabled="disabled">Seleccione una opcion...</option>
+                                    <option v-for="(item, index) in vEducationLevel" :value=item.EducationLevelId>
+                                        {{ item.Description }}
+                                    </option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Escuela:</label>
+                                <input v-model="vModel.School" required oninvalid="this.setCustomValidity('Escribe el nombre de la escuela')" oninput="setCustomValidity('')" type="text" class="form-control" id="School" aria-describedby="emailHelp" placeholder="Ingrese el nombre de la escuela">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Fecha de inicio:</label>
+                                <input v-model="vModel.StartDate" required oninvalid="this.setCustomValidity('Escribe la fecha de ingreso')" oninput="setCustomValidity('')" type="date" class="form-control" id="Description" aria-describedby="emailHelp" placeholder="Ingrese la fecha de ingreso">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Fecha Fin:</label>
+                                <input v-model="vModel.EndDate" required oninvalid="this.setCustomValidity('Escribe la fecha de egreso')" oninput="setCustomValidity('')" type="date" class="form-control" id="Description" aria-describedby="emailHelp" placeholder="Ingrese la fecha de egreso">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Estado:</label>
+                                <input v-model="vModel.State" required oninvalid="this.setCustomValidity('Escribe el estado que pertenece')" oninput="setCustomValidity('')" type="text" class="form-control" id="Description" aria-describedby="emailHelp" placeholder="Ingrese el estado que pertenece">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">Municipio</label>
+                                <input v-model="vModel.Town" required oninvalid="this.setCustomValidity('Escribe el municipio que pertenece')" oninput="setCustomValidity('')" type="text" class="form-control" id="Description" aria-describedby="emailHelp" placeholder="Ingrese el municipio que pertenece">
+                            </div>
+                            <div class="form-group">
+                                <label for="Description">País:</label>
+                                <input v-model="vModel.Country" required oninvalid="this.setCustomValidity('Escribe el país que pertenece')" oninput="setCustomValidity('')" type="text" class="form-control" id="Description" aria-describedby="emailHelp" placeholder="Ingrese el país que pertenece">
+                            </div>
+                            <div class="form-group">
+                                <button type="submit" class="btn btn-primary" name="Create" value="Sign up"><i class="fa fa-save"></i> Guardar</button>
+                                <a class="btn btn-danger" href="@Url.Action("Index", "AdmEducations")"><i class="fa fa-times"></i> Cancelar</a>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/axios.min.js"></script>
+<script src="~/Scripts/Models/Education/Create.js"></script>

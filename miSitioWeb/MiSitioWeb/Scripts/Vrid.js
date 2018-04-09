@@ -36,7 +36,9 @@
                     <tbody>
                         <tr v-for="row in get_rows()">
                             <td v-for="col in columns">
-                                <span>{{row[col]}}</span>
+                                <span>
+                                    {{row[col]}}
+                                </span>
                             </td>
                             <td>
                                 <button v-on:click="editElement(row)" class="btn btn-outline-success">
@@ -46,6 +48,10 @@
                                 <button type="button" data-toggle="modal" data-target="#deleteModal" class="btn btn-outline-danger" v-on:click="confirmDelete(row)">
                                     <i class="fa fa-trash-o"></i>
                                     Eliminar
+                                </button>
+                                <button v-if="row.IsEducation" type="button" class="btn btn-outline-info" v-on:click="select(row)">
+                                    <i class="fa fa-trash-o"></i>
+                                    Agregar Proyectos
                                 </button>
                             </td>
                         </tr>
@@ -130,13 +136,9 @@
                 confirmBloquear: function (item) {
                     this.$parent.itemToDelete = item;
                 },
-                seleccionar: function (item) {
-                    var seleccionarCliente = SeleccionarCliente.value
-                    window.location.href = seleccionarCliente + item.IdKey;
-                },
                 select: function (item) {
-                    var selection = Select.value
-                    window.location.href = selection + item.IdKey;
+                    var selection = SelectLocation.value
+                    window.location.href = selection + item.KeyId;
                 },
             }
         });

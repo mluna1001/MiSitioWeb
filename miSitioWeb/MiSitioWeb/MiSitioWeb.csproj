@@ -148,6 +148,9 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdmScholarshipProjectsController.cs" />
+    <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\AdmEducationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NivelesEducativosController.cs" />
     <Compile Include="Controllers\SocialNetworksController.cs" />
@@ -191,9 +194,13 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="Scripts\Models\Education\Create.js" />
+    <Content Include="Scripts\Models\Education\Edit.js" />
     <Content Include="Scripts\Models\GetModels.js" />
     <Content Include="Scripts\Models\NivelEducativo\Create.js" />
     <Content Include="Scripts\Models\NivelEducativo\Edit.js" />
+    <Content Include="Scripts\Models\ScholarshipProject\Create.js" />
+    <Content Include="Scripts\Models\ScholarshipProject\Edit.js" />
     <Content Include="Scripts\Models\SocialNetwork\Create.js" />
     <Content Include="Scripts\Models\SocialNetwork\Edit.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
@@ -228,10 +235,17 @@
     <Content Include="Views\SocialNetworks\Index.cshtml" />
     <Content Include="Views\SocialNetworks\Create.cshtml" />
     <Content Include="Views\SocialNetworks\Edit.cshtml" />
+    <Content Include="Views\AdmEducations\Index.cshtml" />
+    <Content Include="Views\AdmEducations\Create.cshtml" />
+    <Content Include="Views\AdmEducations\Edit.cshtml" />
+    <Content Include="Views\AdmScholarshipProjects\Index.cshtml" />
+    <Content Include="Views\AdmScholarshipProjects\Create.cshtml" />
+    <Content Include="Views\AdmScholarshipProjects\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
+    <Folder Include="Views\Base\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -49,7 +49,7 @@
                                     <i class="fa fa-trash-o"></i>
                                     Eliminar
                                 </button>
-                                <button v-if="row.IsEducation" type="button" class="btn btn-outline-info" v-on:click="select(row)">
+                                <button v-if="row.IsEducation || row.IsWork" type="button" class="btn btn-outline-info" v-on:click="select(row)">
                                     <i class="fa fa-trash-o"></i>
                                     Agregar Proyectos
                                 </button>
@@ -140,7 +140,15 @@
                     var selection = SelectLocation.value
                     window.location.href = selection + item.KeyId;
                 },
-            }
+                format: function () {
+
+                },
+            },
+            filters: {
+                formatDate: function(value){
+                    return moment(value).format("L");
+                }
+            },
         });
     }
 

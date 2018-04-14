@@ -2,6 +2,7 @@
 {
     using Newtonsoft.Json;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class WorkProject
     {
@@ -13,12 +14,15 @@
 
         [Display(Name = "Proyecto")]
         [Required(ErrorMessage = "The field {0} is requiered.")]
-        [MaxLength(30, ErrorMessage = "The field {0} only can contains a maximum of {1} characters lenght.")]
+        [MaxLength(300, ErrorMessage = "The field {0} only can contains a maximum of {1} characters lenght.")]
         public string Project { get; set; }
 
         [Display(Name = "Descripción")]
         [Required(ErrorMessage = "The field {0} is requiered.")]
-        public string Descríption { get; set; }
+        public string Description { get; set; }
+
+        [NotMapped]
+        public int KeyId { get { return WorkProyectId; } }
         #endregion
 
         #region References

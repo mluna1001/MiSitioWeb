@@ -55,10 +55,14 @@
     <Compile Include="Models\Crud\DTEducation.cs" />
     <Compile Include="Models\Crud\DTEducationLevel.cs" />
     <Compile Include="Models\Crud\DTErrorLog.cs" />
+    <Compile Include="Models\Crud\DTPersonalProject.cs" />
     <Compile Include="Models\Crud\DTScholarshipProject.cs" />
     <Compile Include="Models\Crud\DTSocialNetwork.cs" />
     <Compile Include="Models\Crud\DTUser.cs" />
+    <Compile Include="Models\Crud\DTWorkExperience.cs" />
+    <Compile Include="Models\Crud\DTWorkProject.cs" />
     <Compile Include="Models\DTO\EducationDto.cs" />
+    <Compile Include="Models\DTO\WorkExperienceDto.cs" />
     <Compile Include="Models\Helpers\ExtMethods.cs" />
     <Compile Include="Models\Helpers\PasswordSecurity.cs" />
     <Compile Include="Models\Tables\Education.cs" />

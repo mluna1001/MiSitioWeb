@@ -1,10 +1,10 @@
 ﻿namespace MiSitioWeb.Data.Models.Crud
 {
-    using Tables;
+    using Comun.Tool;
     using System;
     using System.Collections.Generic;
     using System.Linq;
-    using Comun.Tool;
+    using Tables;
 
     public class DTScholarshipProject
     {

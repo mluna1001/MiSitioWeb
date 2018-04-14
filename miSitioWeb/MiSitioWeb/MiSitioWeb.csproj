@@ -148,12 +148,15 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\AdmPersonalProjectsController.cs" />
     <Compile Include="Controllers\AdmScholarshipProjectsController.cs" />
+    <Compile Include="Controllers\AdmWorkProjectsController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\AdmEducationsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\NivelesEducativosController.cs" />
     <Compile Include="Controllers\SocialNetworksController.cs" />
+    <Compile Include="Controllers\AdmWorksController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -199,10 +202,16 @@
     <Content Include="Scripts\Models\GetModels.js" />
     <Content Include="Scripts\Models\NivelEducativo\Create.js" />
     <Content Include="Scripts\Models\NivelEducativo\Edit.js" />
+    <Content Include="Scripts\Models\PersonalProject\Create.js" />
+    <Content Include="Scripts\Models\PersonalProject\Edit.js" />
     <Content Include="Scripts\Models\ScholarshipProject\Create.js" />
     <Content Include="Scripts\Models\ScholarshipProject\Edit.js" />
     <Content Include="Scripts\Models\SocialNetwork\Create.js" />
     <Content Include="Scripts\Models\SocialNetwork\Edit.js" />
+    <Content Include="Scripts\Models\WorkExperience\Create.js" />
+    <Content Include="Scripts\Models\WorkExperience\Edit.js" />
+    <Content Include="Scripts\Models\WorkProject\Create.js" />
+    <Content Include="Scripts\Models\WorkProject\Edit.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\moment-with-locales.js" />
     <Content Include="Scripts\moment-with-locales.min.js" />
@@ -241,11 +250,21 @@
     <Content Include="Views\AdmScholarshipProjects\Index.cshtml" />
     <Content Include="Views\AdmScholarshipProjects\Create.cshtml" />
     <Content Include="Views\AdmScholarshipProjects\Edit.cshtml" />
+    <Content Include="Views\AdmWorks\Index.cshtml" />
+    <Content Include="Views\AdmWorks\Create.cshtml" />
+    <Content Include="Views\AdmWorks\Edit.cshtml" />
+    <Content Include="Views\AdmWorkProjects\Index.cshtml" />
+    <Content Include="Views\AdmWorkProjects\Create.cshtml" />
+    <Content Include="Views\AdmWorkProjects\Edit.cshtml" />
+    <Content Include="Views\AdmPersonalProjects\Index.cshtml" />
+    <Content Include="Views\AdmPersonalProjects\Create.cshtml" />
+    <Content Include="Views\AdmPersonalProjects\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Models\" />
     <Folder Include="Views\Base\" />
+    <Folder Include="Views\Work\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

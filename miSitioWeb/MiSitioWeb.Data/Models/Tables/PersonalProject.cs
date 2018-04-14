@@ -3,6 +3,7 @@
     using Newtonsoft.Json;
     using System;
     using System.ComponentModel.DataAnnotations;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     public class PersonalProject
     {
@@ -41,6 +42,9 @@
         [Required(ErrorMessage = "The field {0} is requiered.")]
 
         public bool Deleted { get; set; }
+
+        [NotMapped]
+        public int KeyId { get { return PersonalProjectId; } }
         #endregion
 
         #region Constructors
